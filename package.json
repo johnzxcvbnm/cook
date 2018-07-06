@@ -15,5 +15,8 @@
   "bugs": {
     "url": "https://github.com/johnzxcvbnm/cook/issues"
   },
-  "homepage": "https://github.com/johnzxcvbnm/cook#readme"
+  "homepage": "https://github.com/johnzxcvbnm/cook#readme",
+  "dependencies": {
+    "express": "^4.16.3"
+  }
 }
