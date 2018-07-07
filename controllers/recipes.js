@@ -1,7 +1,8 @@
 //--------------Dependencies----------------//
 const express = require("express");
 const router = express.Router();
-//Recipe Schema
+const Recipe = require("../models/recipes.js");
+const testSeed = require("../models/testSeed.js");
 
 //--------------Get Routes----------------//
 router.get("/index", (req, res) => {
@@ -10,6 +11,15 @@ router.get("/index", (req, res) => {
 
 router.get("/", (req, res) => {
   res.redirect("/index");
+});
+
+router.get("/testSeed", (req, res) => {
+  // res.send("Adding Seed Data");
+
+  Recipe.create(testSeed, (err, data) => {
+    res.send(data);
+    // res.redirect("/");
+  });
 });
 
 //------------------Export-----------------//
