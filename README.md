@@ -3,9 +3,9 @@
 <h3>Index</h3>
 
 <ol>
-<li><a href="#concept"></a></li>
-<li><a href="#timeline"></a></li>
-<li><a href="#links"></a></li>
+<li><a href="#concept">Concept</a></li>
+<li><a href="#timeline">Timeline</a></li>
+<li><a href="#links">Links</a></li>
 </ol>
 
 <hr id="concept">
