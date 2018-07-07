@@ -10,7 +10,7 @@ router.get("/index", (req, res) => {
 });
 
 router.get("/", (req, res) => {
-  res.redirect("/index");
+  res.redirect("/recipe/index");
 });
 
 router.get("/testSeed", (req, res) => {

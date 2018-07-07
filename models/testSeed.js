@@ -11,6 +11,7 @@ module.exports = [
     ingredients: ["Two Eggs", "A Ham", "Green Food Coloring"],
     directions: ["Add Eggs to skillet", "Add food coloring to eggs", "Cook Eggs to desired doneness", "Slice ham", "Serve and Enjoy"],
     ratings: [5, 5, 2, 4],
+    avgRating: 4,
     protect: true,
     tags: ["DINNER", "HAM", "EGGS", "SEASONAL"]
   },
@@ -24,6 +25,7 @@ module.exports = [
     ingredients: ["1 Potato", "Desired Toppings"],
     directions: ["Preheat oven to 400 degrees", "Slice Potato down the center, longways", "Place potato directly on oven rack", "Cook potato for 20 to 30 minutes", "Remove potato from oven, use a for to check for doneness", "Add any desired toppings and serve"],
     ratings: [2, 4, 3, 1],
+    avgRating: 2.5,
     protect: false,
     tags: ["DINNER", "SIDE DISH", "POTATO"]
   },
@@ -37,6 +39,7 @@ module.exports = [
     ingredients: ["1 Egg White", "1 Tablespoon Water", "1 Pound Pecan Halves", "1 Cup White Sugar", "3/4 Teaspoon Salt", "1/2 Teaspoon Ground Cinnamon"],
     directions: ["Preheat Oven to 250 degrees F.  Grease one baking sheet.", "In a mixing bowl, whip together the egg white and water until frothy.  In a separate bowl, mix together sugar, salt and cinnamon.", "Add pecans to egg whites, stir to coat the nuts evenly.  Remove the nuts, and toss them in the sugar mixture until coated.  Spread the nuts out on the prepared baking sheet.", "Bake at 250 degrees F for 1 hour.  Stir every 15 minutes."],
     ratings: [5, 5, 4, 3, 5],
+    avgRating: 4.4,
     protect: true,
     tags: ["SNACK", "DESSERT", "PECANS"]
   }

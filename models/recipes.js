@@ -11,6 +11,7 @@ const recipeSchema = Schema({
   ingredients: [String],
   directions: [String],
   ratings: [Number],
+  avgRating: Number,
   protect: Boolean,
   tags: [String]
 });
