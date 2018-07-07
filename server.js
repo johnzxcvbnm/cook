@@ -18,10 +18,12 @@ app.use( methodOverride( "_method" ) );
 app.use( express.static( "public" ) );
 
 //-----------------Controllers------------------//
+const recipeControllers = require("./controllers/recipes.js");
+app.use("/recipe", recipeControllers);
 
 //-------------------Index---------------------//
 app.get("/", (req, res) => {
-  res.send("This Still Works");
+  res.redirect("recipe/index");
 });
 
 
