@@ -4,7 +4,7 @@
   --headerBack: #379683;
   --headerSquare: #05386B;
   --headerTitle: #EDF5E1;
-  --headerLinks: #FFFFFF;
+  --headerLinks: #05386B;
 
 
   --colorOne: #05386B;
@@ -57,11 +57,21 @@ body {
   position: relative;
 }
 
+.navBar h3 {
+  margin: 10px 20px;
+  /* margin-top: 25px; */
+}
+
+
 .logo {
   color: var(--headerTitle);
   text-align: center;
   width: 30%;
   /* margin-left: 80px; */
+}
+
+.logo h1 {
+  margin: 10px 0;
 }
 
 .logoSquare {
@@ -107,7 +117,13 @@ body {
 }
 
 .navBar a {
-  /* color: var(--headerLinks); */
+  color: var(--headerLinks);
+  text-decoration: none;
+}
+
+.navBar a:hover {
+  color: var(--headerTitle);
+  text-decoration: underline;
 }
 
 /************* Main Section CSS ************/
@@ -126,4 +142,11 @@ body {
 
 .footerNav a {
   margin: 0 20px;
+  color: var(--headerLinks);
+  text-decoration: none;
+}
+
+.footerNav a:hover {
+  color: var(--headerTitle);
+  text-decoration: underline;
 }
