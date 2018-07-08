@@ -6,7 +6,11 @@ const testSeed = require("../models/testSeed.js");
 
 //--------------Get Routes----------------//
 router.get("/index", (req, res) => {
-  res.render("index.ejs");
+  Recipe.find( {}, (err, myRecipes) => {
+    res.render("index.ejs", {
+      recipes: myRecipes
+    });
+  });
 });
 
 router.get("/", (req, res) => {
