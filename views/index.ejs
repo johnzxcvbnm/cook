@@ -1,26 +1,11 @@
 <!DOCTYPE html>
 <html lang="en" dir="ltr">
   <head>
-    <meta charset="utf-8">
-    <link rel="stylesheet" href="/main.css">
-    <title>The Cooking Epidemic</title>
+    <% include partials/head.ejs %>
   </head>
   <body>
     <div class="container">
-      <div class="header">
-        <div class="logo">
-          <!-- <div class="logoSquare"> -->
-            <h1><a href="/recipe/index">The Cooking Epidemic</a></h1>
-          <!-- </div> -->
-        </div>
-        <div class="navBar">
-            <h3><a href="#">About Us</a></h3>
-            <h3><a href="#">What's for Dinner</a></h3>
-            <h3><a href="/recipe/index">Our Cookbook</a></h3>
-            <h3><a href="#">Register</a></h3>
-            <h3><a href="#">Login</a></h3>
-        </div>
-      </div>
+      <% include partials/nav.ejs %>
       <div class="mainSection">
         <h2>The Cookbook</h2>
         <div class="recipeSection">
@@ -36,11 +21,7 @@
           <% } %>
         </div>
       </div>
-      <div class="footerNav">
-        <h4><a href="#">Other Projects</a></h4>
-        <h4><a href="#">LinkedIn</a></h4>
-        <h4><a href="#">Something Else</a></h4>
-      </div>
+      <% include partials/footer.ejs %>
     </div>
   </body>
 </html>
