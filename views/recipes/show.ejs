@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html lang="en" dir="ltr">
+  <head>
+    <% include ../partials/head.ejs %>
+  </head>
+  <body>
+    <div class="container">
+      <% include ../partials/nav.ejs %>
+      <div class="mainSection">
+        <h2>Let's Cook</h2>
+        <div class="showRecipe">
+          <h3><%= recipe.name %></h3>
+          <p><%= recipe.time %></p>
+          <p><%= recipe.difficulty %></p>
+          <p><%= recipe.arthor %></p>
+          <p><%= recipe.descrition %></p>
+          <p><%= recipe.images %></p>
+          <p><%= recipe.ingredients %></p>
+          <p><%= recipe.directions %></p>
+          <p><%= recipe.ratings %></p>
+          <p><%= recipe.avgRating %></p>
+          <p><%= recipe.protect %></p>
+          <p><%= recipe.tags %></p>
+        </div>
+      </div>
+      <% include ../partials/footer.ejs %>
+    </div>
+  </body>
+</html>

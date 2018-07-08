@@ -12,11 +12,17 @@
           <% for(let i = 0; i < recipes.length; i++){ %>
             <div class="recipeCard">
               <div class="imageWrapper">
-                <img src="<%= recipes[i].images[0]%>">
+                <a href="/recipe/<%= recipes[i].id %>">
+                  <img src="<%= recipes[i].images[0]%>">
+                </a>
               </div>
-              <h4><%= recipes[i].name %></h4>
-              <p>Rating: <%= recipes[i].avgRating %></p>
-              <p>Description: <%= recipes[i].description %></p>
+              <div class="cardDesc">
+                <a href="/recipe/<%= recipes[i].id %>">
+                  <h4><%= recipes[i].name %></h4>
+                </a>
+                <p>Rating: <%= recipes[i].avgRating %></p>
+                <p>Description: <%= recipes[i].description %></p>
+              </div>
             </div>
           <% } %>
         </div>

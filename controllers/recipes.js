@@ -13,10 +13,6 @@ router.get("/index", (req, res) => {
   });
 });
 
-router.get("/", (req, res) => {
-  res.redirect("/recipe/index");
-});
-
 router.get("/testSeed", (req, res) => {
   // res.send("Adding Seed Data");
 
@@ -25,6 +21,19 @@ router.get("/testSeed", (req, res) => {
     // res.redirect("/");
   });
 });
+
+router.get("/:id", (req, res) => {
+  Recipe.findById(req.params.id, (err, myRecipe) => {
+    res.render("recipes/show.ejs", {
+      recipe: myRecipe
+    });
+  });
+});
+
+router.get("/", (req, res) => {
+  res.redirect("/recipe/index");
+});
+
 
 //------------------Export-----------------//
 module.exports = router;
