@@ -1,0 +1,129 @@
+/************* Variables *****************/
+:root {
+  --pageBack: #EDF5E1;
+  --headerBack: #379683;
+  --headerSquare: #05386B;
+  --headerTitle: #EDF5E1;
+  --headerLinks: #FFFFFF;
+
+
+  --colorOne: #05386B;
+  --colorTwo: #379683;
+  --colorThree: #5CDB95;
+  --colorFour: #8EE4AF;
+  --colorFive: #EDF5E1;
+}
+
+/************ General CSS ****************/
+html {
+  /* background: thistle; */
+}
+
+div {
+  border: 1px transparent gold;
+}
+
+body {
+  margin: 0;
+  background: var(--pageBack);
+}
+
+.container {
+  /* background: thistle; */
+  width: 100%;
+  height: 100%;
+  margin: 0;
+  /* padding: 20px; */
+  box-sizing: border-box;
+}
+
+/************** Header CSS ****************/
+.header {
+  width: 100%;
+  padding: 0px 20px 0 20px;
+  box-sizing: border-box;
+  background: var(--headerBack);
+  display: flex;
+  /* justify-content: space-between; */
+}
+
+.navBar {
+  width: 70%;
+  padding: 15px;
+  padding-left: 30px;
+  box-sizing: border-box;
+  display: flex;
+  justify-content: space-between;
+  position: relative;
+}
+
+.logo {
+  color: var(--headerTitle);
+  text-align: center;
+  width: 30%;
+  /* margin-left: 80px; */
+}
+
+.logoSquare {
+  /* background: var(--headerSquare); */
+  /* width: 0;
+  height: 0;
+  border-top: 25px solid transparent;
+  border-left: 200px solid var(--headerSquare);
+  border-bottom: 25px solid transparent; */
+
+  /* width: 100px;
+  height: 100px;
+  transform: rotate(45deg) scale(1.25, 1.25) translate(-50px, 0px); */
+  /* transform: rotate(45deg) scaleX(.5) scaleY(1.5) translateY(-20px); */
+  /* transform: skewY(-45deg); */
+}
+
+.logoSquare > h1 {
+  /* width: auto; */
+  /* transform: rotate(-15deg) scaleY(.75) scaleX(1.5); */
+}
+
+.linksNav {
+  width: 70%;
+  display: flex;
+  position: absolute;
+  bottom: 0;
+}
+
+.loginNav {
+  width: 30%;
+  display: flex;
+  position: absolute;
+  bottom: 0;
+  margin-left: 65%;
+  display: flex;
+  justify-content: flex-end;
+}
+
+.headNav {
+  /* font-size:  */
+  margin: 5px;
+}
+
+.navBar a {
+  /* color: var(--headerLinks); */
+}
+
+/************* Main Section CSS ************/
+.mainSection {
+  width: 90%;
+}
+
+/********** Footer CSS **********/
+
+.footerNav {
+  width: 100%;
+  background: var(--headerBack);
+  display: flex;
+  justify-content: center;
+}
+
+.footerNav a {
+  margin: 0 20px;
+}
