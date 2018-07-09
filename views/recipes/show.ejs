@@ -9,7 +9,24 @@
       <div class="mainSection">
         <h2>Let's Cook</h2>
         <div class="showRecipe">
-          <h3><%= recipe.name %></h3>
+          <div class="recName">
+            <h3><%= recipe.name %></h3>
+          </div>
+          <div class="pictureCar">
+            <% if(recipe.images.length > 0){ %>
+              <div class="arrowWrapper">
+                <div class="leftRotate">
+                </div>
+              </div>
+            <% } %>
+            <img src="<%= recipe.images[0] %>">
+            <% if(recipe.images.length > 0){ %>
+              <div class="arrowWrapper">
+                <div class="rightRotate">
+                </div>
+              </div>
+            <% } %>
+          </div>
           <p><%= recipe.time %></p>
           <p><%= recipe.difficulty %></p>
           <p><%= recipe.arthor %></p>

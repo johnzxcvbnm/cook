@@ -5,7 +5,7 @@
   --headerSquare: #05386B;
   --headerTitle: #EDF5E1;
   --headerLinks: #05386B;
-
+  --subHeaderBack: #5CDB95;
 
   --colorOne: #05386B;
   --colorTwo: #379683;
@@ -150,7 +150,48 @@ body {
 }
 
 /*********** Show.ejs ************/
+.recName {
+  width: 100%;
+  background: var(--headerBack);
+  text-align: center;
+  /* padding: 1px; */
+}
 
+.pictureCar {
+  width: 100%;
+  display: flex;
+  justify-content: center;
+}
+
+.pictureCar img {
+  width: 300px;
+  height: 300px;
+}
+
+.leftRotate, .rightRotate {
+  width: 50px;
+  height: 50px;
+  /* background: black; */
+  margin: 0 30px;
+  border: solid var(--colorThree);
+  border-width: 0 4px 4px 0;
+  display: inline-block;
+  padding: 3px;
+}
+
+.leftRotate {
+  transform: rotate(135deg);
+  -webkit-transform: rotate(135deg);
+}
+
+.rightRotate {
+  transform: rotate(-45deg);
+  -webkit-transform: rotate(-45deg);
+}
+
+.arrowWrapper {
+  padding-top: 125px;
+}
 
 /********** Footer CSS **********/
 
