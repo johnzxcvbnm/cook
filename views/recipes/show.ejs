@@ -9,13 +9,18 @@
       <div class="mainSection">
         <h2>Let's Cook</h2>
         <div class="buttonList">
-          <a href="#" class="actionButton button"><h3>New</h3></a>
+          <a href="/recipe/new" class="actionButton button"><h3>New</h3></a>
           <a href="#" class="actionButton button"><h3>Save</h3></a>
           <a href="#" class="actionButton button"><h3>Rate</h3></a>
           <a href="#" class="actionButton button"><h3>Add Image</h3></a>
           <a href="#" class="actionButton button"><h3>Comment</h3></a>
-          <a href="#" class="actionButton button"><h3>Edit</h3></a>
-          <a href="#" class="actionButton button"><h3>Delete</h3></a>
+          <a href="/recipe/<%= recipe.id %>/edit" class="actionButton button"><h3>Edit</h3></a>
+          <% if(!recipe.protect){ %>
+            <a href="#" class="actionButton button"><h3>Delete</h3></a>
+            <!-- <form>
+              <input class="actionButton button" type="submit" value="Delete" />
+            </form> -->
+          <% } %>
         </div>
         <div class="showRecipe">
           <div class="recipeInfo">
@@ -26,7 +31,12 @@
                   </div>
                 </div>
               <% } %>
-              <img src="<%= recipe.images[0] %>">
+              <% if(recipe.images.length > 0){ %>
+                <img src="<%= recipe.images[0] %>" />
+                <!-- <% for(let i = 0; i < recipe.images.length; i++){ %>
+                  <img id=`img${i}` class="rotateImage" src="<%= recipe.images[i] %>">
+                <% } %> -->
+              <% } %>
               <% if(recipe.images.length > 0){ %>
                 <div class="arrowWrapper">
                   <div class="rightRotate">

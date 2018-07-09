@@ -16,6 +16,7 @@ const bcrypt = require("bcrypt");
 app.use( express.urlencoded( {extended: false} ) );
 app.use( methodOverride( "_method" ) );
 app.use( express.static( "public" ) );
+app.use( express.static( "Javascript" ) );
 
 //-----------------Controllers------------------//
 const recipeControllers = require("./controllers/recipes.js");

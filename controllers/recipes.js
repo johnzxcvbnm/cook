@@ -22,6 +22,14 @@ router.get("/testSeed", (req, res) => {
   });
 });
 
+router.get("/new", (req, res) => {
+  res.send("CREATING NEW RECIPE");
+});
+
+router.get("/:id/edit", (req, res) => {
+  res.send("EDITING RECIPE");
+});
+
 router.get("/:id", (req, res) => {
   Recipe.findById(req.params.id, (err, myRecipe) => {
     res.render("recipes/show.ejs", {
