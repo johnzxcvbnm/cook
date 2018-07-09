@@ -110,6 +110,21 @@ body {
   text-align: center;
 }
 
+.headlineSection {
+  width: 100%;
+}
+
+.headlineSection img {
+  width: 500px;
+  height: 300px;
+  margin: 20px 0;
+}
+
+.headlineImage {
+  width: 500px;
+  margin: auto;
+}
+
 .recipeSection {
   /* width: 100%; */
   display: flex;
@@ -152,13 +167,25 @@ body {
 /*********** Show.ejs ************/
 .recName {
   width: 100%;
-  background: var(--headerBack);
+  background: var(--colorThree);
   text-align: center;
-  /* padding: 1px; */
+  padding: 3px;
+  box-sizing: border-box;
+  color: var(--headerSquare)
+}
+
+.recName h3 {
+  margin: 0;
+}
+
+.recipeInfo {
+  display: flex;
 }
 
 .pictureCar {
-  width: 100%;
+  min-width: 450px;
+  width: 40%;
+  margin-left: 20px;
   display: flex;
   justify-content: center;
 }
@@ -169,11 +196,10 @@ body {
 }
 
 .leftRotate, .rightRotate {
-  width: 50px;
-  height: 50px;
-  /* background: black; */
+  width: 40px;
+  height: 40px;
   margin: 0 30px;
-  border: solid var(--colorThree);
+  border: solid var(--headerBack);
   border-width: 0 4px 4px 0;
   display: inline-block;
   padding: 3px;
@@ -189,8 +215,113 @@ body {
   -webkit-transform: rotate(-45deg);
 }
 
+.leftRotate:hover, .rightRotate:hover {
+  border: solid var(--headerSquare);
+  border-width: 0 4px 4px 0;
+  cursor: pointer;
+}
+
 .arrowWrapper {
   padding-top: 125px;
+}
+
+.recipeDescription {
+  width: 60%;
+  margin-left: 30px;
+}
+
+.catHeader {
+  font-weight: 700;
+  text-decoration: underline;
+  margin-right: 5px;
+}
+
+.tagWrapper {
+  display: flex;
+  flex-wrap: wrap;
+}
+
+.tag {
+  width: 100px;
+  height: 25px;
+  padding-top: 7px;
+  margin: 5px;
+  color: var(--headerSquare)
+}
+
+.button {
+  background: var(--colorThree);
+  border: 1px solid var(--headerSquare);
+  border-radius: 4px;
+  text-align: center;
+}
+
+.actionButton {
+  width: 150px;
+  height: 50px;
+  margin: 5px;
+  padding-top: 12px;
+  box-sizing: border-box;
+}
+
+.buttonList {
+  margin: 20px;
+  display: flex;
+  justify-content: space-around;
+  flex-wrap: wrap;
+}
+
+.buttonList h3 {
+  margin: 0;
+}
+
+.buttonList a {
+  color: var(--headerSquare);
+  text-decoration: none;
+}
+
+.buttonList a:hover {
+  color: var(--colorThree);
+}
+
+.buttonList .button:hover {
+  background: var(--headerSquare);
+  border: 3px solid var(--colorThree);
+  box-sizing: border-box;
+}
+
+.comboList {
+  display: flex;
+}
+
+.ingredientsList {
+  width: 20%;
+}
+
+.directionsList {
+  width: 80%;
+}
+
+.ingredientsList ul {
+  /* border-right: 2px solid black; */
+}
+
+.ingredientsList h3, .directionsList h3, .commentSection h3 {
+  margin-left: 40px;
+  padding: 3px 5px 3px 5px;
+  border-bottom: 2px solid var(--colorThree);
+  background: var(--colorThree);
+  color: var(--headerSquare);
+}
+
+@media(max-width: 800px){
+  .recipeInfo {
+    display: block;
+  }
+
+  .recName {
+    margin-top: 20px;
+  }
 }
 
 /********** Footer CSS **********/

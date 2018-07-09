@@ -8,36 +8,78 @@
       <% include ../partials/nav.ejs %>
       <div class="mainSection">
         <h2>Let's Cook</h2>
+        <div class="buttonList">
+          <a href="#" class="actionButton button"><h3>New</h3></a>
+          <a href="#" class="actionButton button"><h3>Save</h3></a>
+          <a href="#" class="actionButton button"><h3>Rate</h3></a>
+          <a href="#" class="actionButton button"><h3>Add Image</h3></a>
+          <a href="#" class="actionButton button"><h3>Comment</h3></a>
+          <a href="#" class="actionButton button"><h3>Edit</h3></a>
+          <a href="#" class="actionButton button"><h3>Delete</h3></a>
+        </div>
         <div class="showRecipe">
-          <div class="recName">
-            <h3><%= recipe.name %></h3>
-          </div>
-          <div class="pictureCar">
-            <% if(recipe.images.length > 0){ %>
-              <div class="arrowWrapper">
-                <div class="leftRotate">
+          <div class="recipeInfo">
+            <div class="pictureCar">
+              <% if(recipe.images.length > 0){ %>
+                <div class="arrowWrapper">
+                  <div class="leftRotate">
+                  </div>
                 </div>
-              </div>
-            <% } %>
-            <img src="<%= recipe.images[0] %>">
-            <% if(recipe.images.length > 0){ %>
-              <div class="arrowWrapper">
-                <div class="rightRotate">
+              <% } %>
+              <img src="<%= recipe.images[0] %>">
+              <% if(recipe.images.length > 0){ %>
+                <div class="arrowWrapper">
+                  <div class="rightRotate">
+                  </div>
                 </div>
+              <% } %>
+            </div>
+            <div class="recipeDescription">
+              <div class="recName">
+                <h3><%= recipe.name %></h3>
               </div>
-            <% } %>
+              <p><a class="catHeader">Recipe by:</a><%= recipe.arthor %></p>
+              <p><a class="catHeader">Description:</a><%= recipe.description %></p>
+              <p><a class="catHeader">Time:</a><%= recipe.time %> minutes</p>
+              <p><a class="catHeader">Difficulty:</a><%= recipe.difficulty %></p>
+              <p><a class="catHeader">Rating:</a><%= recipe.avgRating %></p>
+              <p><a class="catHeader">Tags:</a></p>
+              <div class="tagWrapper">
+                <% for(let i = 0; i < recipe.tags.length; i++){ %>
+                  <div class="tag button">
+                    <%= recipe.tags[i] %>
+                  </div>
+                <% } %>
+              </div>
+            </div>
           </div>
-          <p><%= recipe.time %></p>
-          <p><%= recipe.difficulty %></p>
-          <p><%= recipe.arthor %></p>
-          <p><%= recipe.descrition %></p>
-          <p><%= recipe.images %></p>
-          <p><%= recipe.ingredients %></p>
-          <p><%= recipe.directions %></p>
-          <p><%= recipe.ratings %></p>
-          <p><%= recipe.avgRating %></p>
-          <p><%= recipe.protect %></p>
-          <p><%= recipe.tags %></p>
+          <div class="comboList">
+            <div class="ingredientsList">
+              <h3>Ingredients</h3>
+              <ul>
+                <% for(let i = 0; i < recipe.ingredients.length; i++){ %>
+                  <li><%= recipe.ingredients[i] %></li>
+                <% } %>
+              </ul>
+            </div>
+            <div class="directionsList">
+              <h3>Directions</h3>
+              <ol>
+                <% for(let i = 0; i < recipe.directions.length; i++){ %>
+                  <li><%= recipe.directions[i] %></li>
+                <% } %>
+              </ol>
+            </div>
+          </div>
+          <div class="commentSection">
+            <h3>Comments</h3>
+            <ul>
+              <li>Awesome Recipe!</li>
+              <li>This made for a great meal!</li>
+              <li>Wow.  Just wow.</li>
+              <li>Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.</li>
+            </ul>
+          </div>
         </div>
       </div>
       <% include ../partials/footer.ejs %>
