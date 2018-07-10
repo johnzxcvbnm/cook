@@ -1,0 +1,20 @@
+/********** Footer CSS **********/
+
+.footerNav {
+  margin-top: 20px;
+  width: 100%;
+  background: var(--headerBack);
+  display: flex;
+  justify-content: center;
+}
+
+.footerNav a {
+  margin: 0 20px;
+  color: var(--headerLinks);
+  text-decoration: none;
+}
+
+.footerNav a:hover {
+  color: var(--headerTitle);
+  text-decoration: underline;
+}

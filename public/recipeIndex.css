@@ -1,0 +1,66 @@
+/************* Index.ejs *******************/
+
+.mainSection {
+  margin: 75px auto;
+  width: 95%;
+  /* margin: auto; */
+  /* background: thistle; */
+}
+
+.mainSection h2 {
+  text-align: center;
+}
+
+.headlineSection {
+  width: 100%;
+}
+
+.headlineSection img {
+  width: 500px;
+  height: 300px;
+  margin: 20px 0;
+}
+
+.headlineImage {
+  width: 500px;
+  margin: auto;
+}
+
+.recipeSection {
+  /* width: 100%; */
+  display: flex;
+  flex-wrap: wrap;
+  /* justify-content: space-between; */
+  justify-content: space-around;
+}
+
+.recipeCard {
+  margin: 10px;
+  /* border: 1px solid black; */
+  /* border-top: 0px solid black; */
+  width: 250px;
+}
+
+.imageWrapper {
+  /* width: fit-content;
+  margin: auto; */
+  height: 250px;
+  /* width: 251px; */
+  /* border: 1px solid #379683; */
+  border-bottom: 0;
+}
+
+.recipeCard img {
+  width: 250px;
+  height: 250px;
+  margin: auto;
+}
+
+.cardDesc {
+  border: 1px solid #379683;
+  padding-left: 5px;
+}
+
+.cardDesc a {
+  color: black;
+}

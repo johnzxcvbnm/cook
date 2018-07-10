@@ -1,0 +1,57 @@
+/************** Header CSS ****************/
+.header {
+  width: 100%;
+  padding: 0px 20px 0 20px;
+  box-sizing: border-box;
+  background: var(--headerBack);
+  display: flex;
+  /* justify-content: space-between; */
+  position: fixed;
+  left: 0;
+  right: 0;
+  top: 0;
+  z-index: 5000;
+}
+
+.navBar {
+  width: 70%;
+  /* padding: 15px; */
+  padding-left: 30px;
+  box-sizing: border-box;
+  display: flex;
+  justify-content: space-between;
+}
+
+.navBar h3 {
+  margin: 10px 20px;
+  /* margin-top: 25px; */
+}
+
+
+.logo {
+  width: 30%;
+}
+
+.logo h1 {
+  text-align: center;
+  margin: 0;
+}
+
+.logo a {
+  color: var(--headerTitle);
+  text-decoration: none;
+}
+
+.logo a:hover {
+  color: var(--headerLinks);
+}
+
+.navBar a {
+  color: var(--headerLinks);
+  text-decoration: none;
+}
+
+.navBar a:hover {
+  color: var(--headerTitle);
+  text-decoration: underline;
+}
