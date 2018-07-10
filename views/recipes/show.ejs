@@ -32,10 +32,10 @@
                 </div>
               <% } %>
               <% if(recipe.images.length > 0){ %>
-                <img src="<%= recipe.images[0] %>" />
-                <!-- <% for(let i = 0; i < recipe.images.length; i++){ %>
+                <!-- <img src="<%= recipe.images[0] %>" /> -->
+                <% for(let i = 0; i < recipe.images.length; i++){ %>
                   <img id=`img${i}` class="rotateImage" src="<%= recipe.images[i] %>">
-                <% } %> -->
+                <% } %>
               <% } %>
               <% if(recipe.images.length > 0){ %>
                 <div class="arrowWrapper">

@@ -1,18 +1,25 @@
 const enableRotateButtons = () => {
-  // const myImages = $(".rotateImage").hide();
-  //
-  // console.log(myImages[0]);
-  // myImages[0].show();
-  // myImages[0].attr("display", "block");
+  let imageCurrent = 0;
+  const $myImages = $(".rotateImage").hide();
+  $myImages.eq(imageCurrent).show();
+  const imageLimit = $myImages.length;
 
   $(".leftRotate").on("click", () => {
-    console.log("Left Click");
-    // myImages.unshift(myImages[myImages.length - 1]);
-    // myImages.pop
+    $myImages.eq(imageCurrent).hide();
+    imageCurrent--;
+    if(imageCurrent < 0){
+      imageCurrent = imageLimit - 1;
+    }
+    $myImages.eq(imageCurrent).show();
   });
+
   $(".rightRotate").on("click", () => {
-    console.log("Right Click");
-    console.log(myImages);
+    $myImages.eq(imageCurrent).hide();
+    imageCurrent++;
+    if(imageCurrent === imageLimit){
+      imageCurrent = 0;
+    }
+    $myImages.eq(imageCurrent).show();
   });
 }
 
