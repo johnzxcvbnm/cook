@@ -5,17 +5,17 @@
   box-sizing: border-box;
   background: var(--headerBack);
   display: flex;
-  /* justify-content: space-between; */
   position: fixed;
   left: 0;
   right: 0;
   top: 0;
   z-index: 5000;
+  font-family: 'Exo 2', sans-serif;
+  letter-spacing: 1px;
 }
 
 .navBar {
   width: 70%;
-  /* padding: 15px; */
   padding-left: 30px;
   box-sizing: border-box;
   display: flex;
@@ -24,9 +24,7 @@
 
 .navBar h3 {
   margin: 10px 20px;
-  /* margin-top: 25px; */
 }
-
 
 .logo {
   width: 30%;

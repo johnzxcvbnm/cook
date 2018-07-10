@@ -6,6 +6,8 @@
   background: var(--headerBack);
   display: flex;
   justify-content: center;
+  font-family: 'Exo 2', sans-serif;
+  letter-spacing: 1px;
 }
 
 .footerNav a {

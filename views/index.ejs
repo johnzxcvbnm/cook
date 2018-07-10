@@ -22,11 +22,11 @@
                 </a>
               </div>
               <div class="cardDesc">
-                <a href="/recipe/<%= recipes[i].id %>">
+                <a href="/recipe/<%= recipes[i].id %>" class="cardHeader">
                   <h4><%= recipes[i].name %></h4>
                 </a>
-                <p>Rating: <%= recipes[i].avgRating %></p>
-                <p>Description: <%= recipes[i].description %></p>
+                <p><a class="catHeader">Rating:</a><%= recipes[i].avgRating %></p>
+                <p><a class="catHeader">Description:</a><%= recipes[i].description %></p>
               </div>
             </div>
           <% } %>
