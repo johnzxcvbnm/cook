@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html lang="en" dir="ltr">
+  <head>
+    <% include ../partials/head.ejs %>
+  </head>
+  <body>
+    <div class="container">
+      <% include ../partials/nav.ejs %>
+      <div class="mainSection">
+        <h2>Edit Recipe</h2>
+        <div class="recName">
+          <h3><%= recipe.name %></h3>
+        </div>
+        <form action="/recipe/<%= recipe.id %>?_method=PUT" method="POST">
+          <label for="name">Name:</label>
+          <input id="name" type="text" value="<%= recipe.name %>" name="name" required />
+          <label for="arthor">Recipe By:</label>
+          <input id="arthor" type="text" value="<%= recipe.arthor %>" name="arthor" required />
+          <label for="description">Description:</label>
+          <input id="description" type="text" value="<%= recipe.description %>" name="description" required />
+          <label for="time">Time:</label>
+          <input id="time" type="number" value="<%= recipe.time %>" name="time" required />
+          <label for="difficulty">Difficulty:</label>
+          <input id="difficulty" type="number" vaule="<%= recipe.difficulty %>" name="difficulty" required />
+          <label for="tags">Tags:</label>
+          <% for(let i = 0; i < recipe.tags.length; i++){ %>
+            <input id="tags" type="text" name="tags" value="<%= recipe.tags[i] %>" />
+          <% } %>
+          <label for="images">Image URL:</label>
+          <% for(let i = 0; i < recipe.images.length; i++){ %>
+            <input id="images" type="text" name="images" value="<%= recipe.images[i] %>" />
+          <% } %>
+          <label for="ingredients">Ingredients:</label>
+          <% for(let i = 0; i < recipe.ingredients.length; i++){ %>
+            <input id="ingredients" type="text" name="ingredients" value="<%= recipe.ingredients[i] %>" />
+          <% } %>
+          <label for="directions">Directions:</label>
+          <% for(let i = 0; i < recipe.directions.length; i++){ %>
+            <input id="directions" type="text" name="directions" value="<%= recipe.directions[i] %>" />
+          <% } %>
+          <input type="submit" value="Submit Changes">
+        </form>
+      </div>
+      <% include ../partials/footer.ejs %>
+    </div>
+  </body>
+</html>

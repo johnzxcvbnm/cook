@@ -326,6 +326,11 @@ body {
   }
 }
 
+/************ Edit EJS **********/
+label, input{
+  display: block;
+}
+
 /********** Footer CSS **********/
 
 .footerNav {

@@ -4,7 +4,39 @@ const router = express.Router();
 const Recipe = require("../models/recipes.js");
 const testSeed = require("../models/testSeed.js");
 
-//--------------Get Routes----------------//
+//--------------PUT Routes----------------//
+router.put("/:id", (req, res) => {
+  // res.send(req.body);
+  for(let i = 0; i < req.body.tags.length; i++){
+    if(req.body.tags[i] === ""){
+      req.body.tags.splice(i, 1);
+    }
+  }
+
+  for(let i = 0; i < req.body.images.length; i++){
+    if(req.body.images[i] === ""){
+      req.body.images.splice(i, 1);
+    }
+  }
+
+  for(let i = 0; i < req.body.ingredients.length; i++){
+    if(req.body.ingredients[i] === ""){
+      req.body.ingredients.splice(i, 1);
+    }
+  }
+
+  for(let i = 0; i < req.body.directions.length; i++){
+    if(req.body.directions[i] === ""){
+      req.body.directions.splice(i, 1);
+    }
+  }
+
+  Recipe.findByIdAndUpdate( req.params.id, req.body, (err) => {
+    res.redirect(`/recipe/${req.params.id}`);
+  });
+});
+
+//--------------GET Routes----------------//
 router.get("/index", (req, res) => {
   Recipe.find( {}, (err, myRecipes) => {
     res.render("index.ejs", {
@@ -26,8 +58,16 @@ router.get("/new", (req, res) => {
   res.send("CREATING NEW RECIPE");
 });
 
+router.get("/deleteall", (req, res) => {
+  res.send("EVERYTHING DELETED");
+})
+
 router.get("/:id/edit", (req, res) => {
-  res.send("EDITING RECIPE");
+  Recipe.findById(req.params.id, (err, myRecipe) => {
+    res.render("recipes/edit.ejs", {
+      recipe: myRecipe
+    });
+  });
 });
 
 router.get("/:id", (req, res) => {
