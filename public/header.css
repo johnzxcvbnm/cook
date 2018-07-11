@@ -44,12 +44,20 @@
   color: var(--headerLinks);
 }
 
-.navBar a {
+.navBar a, .navBar input {
   color: var(--headerLinks);
   text-decoration: none;
 }
 
-.navBar a:hover {
+.navBar a:hover, .navBar input:hover {
   color: var(--headerTitle);
   text-decoration: underline;
+}
+
+.navBar input {
+  background: var(--headerBack);
+  border: 0;
+  font-size: 1.2em;
+  padding-top: 10px;
+  margin-right: 10px;
 }
