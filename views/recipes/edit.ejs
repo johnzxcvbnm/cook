@@ -22,6 +22,12 @@
               <input id="time" type="number" value="<%= recipe.time %>" name="time" min="1" required />
               <label for="difficulty">Difficulty:</label>
               <input id="difficulty" type="number" value="<%= recipe.difficulty %>" name="difficulty" min="1" max="5" required />
+              <label for="protect">Protect Recipe:</label>
+              <input id="protect" type="checkbox" name="protect"
+                <% if(recipe.protect){ %>
+                  checked
+                <% } %>
+              />
             </div>
             <div class="middleGroup">
               <div class="flexGroup">

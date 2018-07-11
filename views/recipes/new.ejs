@@ -1,0 +1,70 @@
+<!DOCTYPE html>
+<html lang="en" dir="ltr">
+  <head>
+    <% include ../partials/head.ejs %>
+  </head>
+  <body>
+    <div class="container">
+      <% include ../partials/nav.ejs %>
+      <div class="mainSection">
+        <h2>New Recipe</h2>
+        <form action="/recipe" method="POST">
+          <div class="groupWrapper">
+            <div class="leftGroup">
+              <label for="name">Recipe Name:</label>
+              <input id="name" type="text" name="name" required />
+              <label for="arthor">Recipe By:</label>
+              <input id="arthor" type="text" name="arthor" required />
+              <label for="time">Time in Minutes:</label>
+              <input id="time" type="number" name="time" min="1" required />
+              <label for="difficulty">Difficulty:</label>
+              <input id="difficulty" type="number" name="difficulty" min="1" max="5" required />
+              <label for="protect">Protect Recipe:</label>
+              <input id="protect" type="checkbox" name="protect" />
+            </div>
+            <div class="middleGroup">
+              <div class="flexGroup">
+                <label for="tags">Tags:</label>
+                <div class="pm button" id="moreTags"><h5>MORE</h5></div>
+                <div class="pm button" id="lessTags"><h5>LESS</h5></div>
+              </div>
+              <div class="inputTagsWrapper">
+                <input id="tags" type="text" name="tags" required />
+              </div>
+            </div>
+            <div class="rightGroup">
+              <div class="flexGroup">
+                <label for="ingredients">Ingredients:</label>
+                <div class="pm button" id="moreIng"><h5>MORE</h5></div>
+                <div class="pm button" id="lessIng"><h5>LESS</h5></div>
+              </div>
+              <div class="inputIngredientsWrapper">
+                <input id="ingredients" type="text" name="ingredients" required />
+              </div>
+            </div>
+          </div>
+          <label for="description">A Short Description:</label>
+          <input id="description" type="text" name="description" required />
+          <div class="flexGroup">
+            <label for="images">Image URL:</label>
+            <div class="pm button" id="moreImages"><h5>MORE</h5></div>
+            <div class="pm button" id="lessImages"><h5>LESS</h5></div>
+          </div>
+          <div class="inputImagesWrapper">
+            <input id="images" type="text" name="images" required />
+          </div>
+          <div class="flexGroup">
+            <label for="directions">Directions:</label>
+            <div class="pm button" id="moreDirections"><h5>MORE</h5></div>
+            <div class="pm button" id="lessDirections"><h5>LESS</h5></div>
+          </div>
+          <div class="inputDirectionsWrapper">
+            <input id="directions" type="text" name="directions" required />
+          </div>
+          <input class="button" type="submit" value="Add Recipe">
+        </form>
+      </div>
+      <% include ../partials/footer.ejs %>
+    </div>
+  </body>
+</html>
