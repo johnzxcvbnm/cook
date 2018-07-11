@@ -4,6 +4,14 @@ const router = express.Router();
 const Recipe = require("../models/recipes.js");
 const testSeed = require("../models/testSeed.js");
 
+//--------------DELETE Routes----------------//
+router.delete("/:id", (req, res) => {
+  Recipe.findByIdAndRemove( req.params.id, (err) => {
+    res.redirect("/recipe");
+  });
+});
+
+
 //--------------POST Routes----------------//
 router.post("/", (req, res) => {
   for(let i = req.body.tags.length - 1; i >= 0; i--){

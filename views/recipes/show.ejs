@@ -16,10 +16,10 @@
           <a href="#" class="actionButton button"><h3>Comment</h3></a>
           <a href="/recipe/<%= recipe.id %>/edit" class="actionButton button"><h3>Edit</h3></a>
           <% if(!recipe.protect){ %>
-            <a href="#" class="actionButton button"><h3>Delete</h3></a>
-            <!-- <form>
+            <!-- <a href="#" class="actionButton button"><h3>Delete</h3></a> -->
+            <form action="/recipe/<%= recipe.id %>?_method=DELETE" method="POST">
               <input class="actionButton button" type="submit" value="Delete" />
-            </form> -->
+            </form>
           <% } %>
         </div>
         <div class="showRecipe">
