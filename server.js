@@ -24,20 +24,27 @@ app.use( express.static( "public" ) );
 app.use( express.static( "Javascript" ) );
 
 //-----------------Controllers------------------//
-const recipeControllers = require("./controllers/recipes.js");
-app.use("/recipe", recipeControllers);
+const sessionsController = require("./controllers/sessions.js");
+app.use("/sessions", sessionsController);
 
 const usersController = require("./controllers/users.js");
 app.use("/users", usersController);
 
-const sessionsController = require("./controllers/sessions.js");
-app.use("/sessions", sessionsController);
+const recipeControllers = require("./controllers/recipes.js");
+app.use("/recipe", recipeControllers);
+
+
 
 //-------------------Index---------------------//
 app.get("/", (req, res) => {
   res.redirect("recipe/index");
 });
 
+app.get("*", (req, res) => {
+  res.render("404.ejs", {
+    currentUser: req.session.currentUser
+  });
+});
 
 //------------------Connections------------------//
 app.listen(port, () => {

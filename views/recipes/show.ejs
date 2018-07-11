@@ -8,19 +8,25 @@ author<!DOCTYPE html>
       <% include ../partials/nav.ejs %>
       <div class="mainSection">
         <h2>Let's Cook</h2>
-        <div class="buttonList">
-          <a href="/recipe/new" class="actionButton button"><h3>New</h3></a>
-          <a href="#" class="actionButton button"><h3>Save</h3></a>
-          <a href="#" class="actionButton button"><h3>Rate</h3></a>
-          <a href="#" class="actionButton button"><h3>Comment</h3></a>
-          <a href="/recipe/<%= recipe.id %>/edit" class="actionButton button"><h3>Edit</h3></a>
-          <% if(!recipe.protect){ %>
-            <!-- <a href="#" class="actionButton button"><h3>Delete</h3></a> -->
-            <form action="/recipe/<%= recipe.id %>?_method=DELETE" method="POST">
-              <input class="deleteButton button" type="submit" value="Delete" />
-            </form>
-          <% } %>
-        </div>
+        <% if(currentUser){ %>
+          <div class="buttonList">
+            <a href="/recipe/new" class="actionButton button"><h3>New</h3></a>
+            <% if(!currentUser.cookbook.includes(recipe.id)){ %>
+              <a href="/users/<%= currentUser._id %>/save/<%= recipe.id %>" class="actionButton button"><h3>Save</h3></a>
+            <% } else { %>
+              <a href="/users/<%= currentUser._id %>/delete/<%= recipe.id %>" class="actionButton button"><h3>UnSave</h3></a>
+            <% } %>
+            <a href="#" class="actionButton button"><h3>Rate</h3></a>
+            <a href="#" class="actionButton button"><h3>Comment</h3></a>
+            <a href="/recipe/<%= recipe.id %>/edit" class="actionButton button"><h3>Edit</h3></a>
+            <% if(!recipe.protect){ %>
+              <!-- <a href="#" class="actionButton button"><h3>Delete</h3></a> -->
+              <form action="/recipe/<%= recipe.id %>?_method=DELETE" method="POST">
+                <input class="deleteButton button" type="submit" value="Delete" />
+              </form>
+            <% } %>
+          </div>
+        <% } %>
         <div class="showRecipe">
           <div class="recipeInfo">
             <div class="pictureCar">

@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="en" dir="ltr">
+  <head>
+    <% include ../partials/head.ejs %>
+  </head>
+  <body>
+    <div class="container">
+      <% include ../partials/nav.ejs %>
+      <div class="mainSection">
+        <h2><%= foundUser.username %>'s User Page</h2>
+        <h3>Saved Recipes</h3>
+        <ul>
+          <% for(let i = 0; i < foundUser.cookbook.length; i++){ %>
+            <li><%= foundUser.cookbook[i] %></li>
+          <% } %>
+        </ul>
+        <div class="recipeSection">
+          <% for(let i = 0; i < recipes.length; i++){ %>
+            <div class="recipeCard">
+              <div class="imageWrapper">
+                <a href="/recipe/<%= recipes[i].id %>">
+                  <img src="<%= recipes[i].images[0]%>">
+                </a>
+              </div>
+              <div class="cardDesc">
+                <a href="/recipe/<%= recipes[i].id %>" class="cardHeader">
+                  <h4><%= recipes[i].name %></h4>
+                </a>
+                <p><a class="catHeader">Rating:</a><%= recipes[i].avgRating %></p>
+                <p><a class="catHeader">Description:</a><%= recipes[i].description %></p>
+              </div>
+            </div>
+          <% } %>
+        </div>
+      </div>
+      <% include ../partials/footer.ejs %>
+    </div>
+  </body>
+</html>

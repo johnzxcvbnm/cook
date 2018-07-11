@@ -164,6 +164,17 @@ router.get("/:id/edit", (req, res) => {
   });
 });
 
+router.get("/:id/save", (req, res) => {
+  // 5b4649c6f1f8ce63e64d804b
+  // 5b4649c6f1f8ce63e64d804b
+  // req.session.currentUser["cookbook"].push(req.params.id);
+
+
+  res.redirect(`/recipe/index`, {
+    currentUser: req.session.currentUser
+  });
+});
+
 router.get("/:id", (req, res) => {
   Recipe.findById(req.params.id, (err, myRecipe) => {
     res.render("recipes/show.ejs", {
