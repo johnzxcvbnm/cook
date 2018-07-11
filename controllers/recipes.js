@@ -52,9 +52,9 @@ router.post("/", (req, res) => {
     req.body.protect = false;
   }
 
-  // Recipe.findByIdAndUpdate( req.params.id, req.body, (err) => {
-  //   res.redirect(`/recipe/${req.params.id}`);
-  // });
+  req.body.tags = req.body.tags.map( (x) => {
+    return x.toUpperCase();
+  });
 
   Recipe.create(req.body, (err, myRecipe) => {
     res.redirect(`/recipe/${myRecipe.id}`);
@@ -102,6 +102,10 @@ router.put("/:id", (req, res) => {
     req.body.protect = false;
   }
 
+  req.body.tags = req.body.tags.map( (x) => {
+    return x.toUpperCase();
+  });
+
   Recipe.findByIdAndUpdate( req.params.id, req.body, (err) => {
     res.redirect(`/recipe/${req.params.id}`);
   });
@@ -130,7 +134,20 @@ router.get("/new", (req, res) => {
 });
 
 router.get("/deleteall", (req, res) => {
-  res.send("EVERYTHING DELETED");
+  Recipe.remove({}, (err) => {
+    res.redirect("/");
+  });
+});
+
+router.get("/search", (req, res) => {
+  res.render("recipes/search.ejs");
+});
+
+router.get("/search/random", (req, res) => {
+  Recipe.find( {}, (err, myRecipes) => {
+    const myRandom = ( Math.floor( Math.random() * myRecipes.length ) );
+    res.redirect(`/recipe/${myRecipes[myRandom].id}`);
+  })
 })
 
 router.get("/:id/edit", (req, res) => {

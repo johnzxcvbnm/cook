@@ -13,7 +13,8 @@ const recipeSchema = Schema({
   ratings: [Number],
   avgRating: Number,
   protect: Boolean,
-  tags: [String]
+  tags: [String],
+  comments: []
 });
 
 module.exports = mongoose.model("Recipe", recipeSchema);
