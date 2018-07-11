@@ -50,7 +50,7 @@ input {
   cursor: pointer;
 }
 
-input[type="submit"] {
+.editButton {
   color: var(--headerSquare);
   margin: 30px auto 0 auto;
   padding: 10px 0;
@@ -59,7 +59,7 @@ input[type="submit"] {
   font-size: 1.3em;
 }
 
-input[type="submit"]:hover {
+.editButton:hover {
   color: var(--colorThree);
   background: var(--headerSquare);
   border: 1px solid var(--colorThree);

@@ -3,7 +3,7 @@
 module.exports = [
   {
     name: "Green Eggs and Ham",
-    arthor: "John",
+    author: "John",
     time: 10,
     difficulty: 2,
     description: "A classic dish for all ages.",
@@ -17,7 +17,7 @@ module.exports = [
   },
   {
     name: "Baked Potato",
-    arthor: "John",
+    author: "John",
     time: 30,
     difficulty: 1,
     description: "A perfect dish as a side to dinner or a mid-day snack.",
@@ -31,7 +31,7 @@ module.exports = [
   },
   {
     name: "Sugar Coated Pecans",
-    arthor: "John",
+    author: "John",
     time: 80,
     difficulty: 2,
     description: "A sweet and wonderful snack for any occasion.",

@@ -1,4 +1,4 @@
-<!DOCTYPE html>
+author<!DOCTYPE html>
 <html lang="en" dir="ltr">
   <head>
     <% include ../partials/head.ejs %>
@@ -12,20 +12,19 @@
           <a href="/recipe/new" class="actionButton button"><h3>New</h3></a>
           <a href="#" class="actionButton button"><h3>Save</h3></a>
           <a href="#" class="actionButton button"><h3>Rate</h3></a>
-          <a href="#" class="actionButton button"><h3>Add Image</h3></a>
           <a href="#" class="actionButton button"><h3>Comment</h3></a>
           <a href="/recipe/<%= recipe.id %>/edit" class="actionButton button"><h3>Edit</h3></a>
           <% if(!recipe.protect){ %>
             <!-- <a href="#" class="actionButton button"><h3>Delete</h3></a> -->
             <form action="/recipe/<%= recipe.id %>?_method=DELETE" method="POST">
-              <input class="actionButton button" type="submit" value="Delete" />
+              <input class="deleteButton button" type="submit" value="Delete" />
             </form>
           <% } %>
         </div>
         <div class="showRecipe">
           <div class="recipeInfo">
             <div class="pictureCar">
-              <% if(recipe.images.length > 0){ %>
+              <% if(recipe.images.length > 1){ %>
                 <div class="arrowWrapper">
                   <div class="leftRotate">
                   </div>
@@ -37,7 +36,7 @@
                   <img id=`img${i}` class="rotateImage" src="<%= recipe.images[i] %>">
                 <% } %>
               <% } %>
-              <% if(recipe.images.length > 0){ %>
+              <% if(recipe.images.length > 1){ %>
                 <div class="arrowWrapper">
                   <div class="rightRotate">
                   </div>
@@ -48,7 +47,7 @@
               <div class="recName">
                 <h3><%= recipe.name %></h3>
               </div>
-              <p><a class="catHeader">Recipe by:</a><%= recipe.arthor %></p>
+              <p><a class="catHeader">Recipe by:</a><%= recipe.author %></p>
               <p><a class="catHeader">Description:</a><%= recipe.description %></p>
               <p><a class="catHeader">Time:</a><%= recipe.time %> minutes</p>
               <p><a class="catHeader">Difficulty:</a><%= recipe.difficulty %></p>

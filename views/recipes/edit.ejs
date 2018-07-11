@@ -16,8 +16,8 @@
             <div class="leftGroup">
               <label for="name">Recipe Name:</label>
               <input id="name" type="text" value="<%= recipe.name %>" name="name" required />
-              <label for="arthor">Recipe By:</label>
-              <input id="arthor" type="text" value="<%= recipe.arthor %>" name="arthor" required />
+              <label for="author">Recipe By:</label>
+              <input id="author" type="text" value="<%= recipe.author %>" name="author" required />
               <label for="time">Time in Minutes:</label>
               <input id="time" type="number" value="<%= recipe.time %>" name="time" min="1" required />
               <label for="difficulty">Difficulty:</label>
@@ -80,7 +80,7 @@
               <input id="directions" type="text" name="directions" value="<%= recipe.directions[i] %>" />
             <% } %>
           </div>
-          <input class="button" type="submit" value="Submit Changes">
+          <input class="editButton button" type="submit" value="Submit Changes">
         </form>
       </div>
       <% include ../partials/footer.ejs %>

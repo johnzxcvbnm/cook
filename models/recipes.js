@@ -5,7 +5,7 @@ const recipeSchema = Schema({
   name: {type: String, unique: true},
   time: Number,
   difficulty: Number,
-  arthor: String,
+  author: String,
   description: String,
   images: [String],
   ingredients: [String],

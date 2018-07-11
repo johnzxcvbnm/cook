@@ -1,7 +1,7 @@
 //File contains a few basic recipes to start with to build some basic design.
 
-const generateArthor = () => {
-  const myArthors = [
+const generateauthor = () => {
+  const myauthors = [
     "John K",
     "Jamie M",
     "Jordan B",
@@ -9,9 +9,9 @@ const generateArthor = () => {
     "Rin Z",
     "Ayra L"
   ]
-  const myPick = Math.floor(Math.random() * myArthors.length);
+  const myPick = Math.floor(Math.random() * myauthors.length);
 
-  return myArthors[myPick];
+  return myauthors[myPick];
 }
 
 const generateRatings = () => {
@@ -40,7 +40,7 @@ const generateAverage = (myRatings) => {
 const myData = [
   {
     name: "",
-    arthor: generateArthor(),
+    author: generateauthor(),
     time: 0,
     difficulty: 0,
     description: "",
