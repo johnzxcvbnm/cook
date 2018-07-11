@@ -52,14 +52,22 @@ router.post("/", (req, res) => {
     req.body.protect = false;
   }
 
-  req.body.tags = req.body.tags.map( (x) => {
-    return x.toUpperCase();
-  });
+  if(typeof(req.body.tags) === "string"){
+    req.body.tags = req.body.tags.toUpperCase();
+  } else {
+    req.body.tags = req.body.tags.map( (x) => {
+      return x.toUpperCase();
+    });
+  }
 
   Recipe.create(req.body, (err, myRecipe) => {
-    res.redirect(`/recipe/${myRecipe.id}`);
-  })
-})
+    if(req.session.currentUser){
+      res.redirect(`/users/${req.session.currentUser._id}/save/${myRecipe._id}`);
+    } else {
+      res.redirect(`/recipe/${myRecipe._id}`);
+    }
+  });
+});
 
 //--------------PUT Routes----------------//
 router.put("/:id", (req, res) => {
@@ -102,9 +110,13 @@ router.put("/:id", (req, res) => {
     req.body.protect = false;
   }
 
-  req.body.tags = req.body.tags.map( (x) => {
-    return x.toUpperCase();
-  });
+  if(typeof(req.body.tags) === "string"){
+    req.body.tags = req.body.tags.toUpperCase();
+  } else {
+    req.body.tags = req.body.tags.map( (x) => {
+      return x.toUpperCase();
+    });
+  }
 
   Recipe.findByIdAndUpdate( req.params.id, req.body, (err) => {
     res.redirect(`/recipe/${req.params.id}`);

@@ -8,12 +8,7 @@
       <% include ../partials/nav.ejs %>
       <div class="mainSection">
         <h2><%= foundUser.username %>'s User Page</h2>
-        <h3>Saved Recipes</h3>
-        <ul>
-          <% for(let i = 0; i < foundUser.cookbook.length; i++){ %>
-            <li><%= foundUser.cookbook[i] %></li>
-          <% } %>
-        </ul>
+        <h3 class="userSaved button">Saved Recipes</h3>
         <div class="recipeSection">
           <% for(let i = 0; i < recipes.length; i++){ %>
             <div class="recipeCard">
