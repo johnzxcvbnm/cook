@@ -1,0 +1,15 @@
+.createUserWrapper {
+  display: flex;
+  justify-content: center;
+  padding-bottom: 30px
+}
+
+.subWrapper {
+  width: 40%;
+  margin: 10px;
+}
+
+.wrongCombo {
+  text-align: center;
+  color: red;
+}

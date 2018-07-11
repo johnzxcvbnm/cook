@@ -8,9 +8,6 @@
       <% include ../partials/nav.ejs %>
       <div class="mainSection">
         <h2>Edit Recipe</h2>
-        <!-- <div class="recName">
-          <h3><%= recipe.name %></h3>
-        </div> -->
         <form action="/recipe/<%= recipe.id %>?_method=PUT" method="POST">
           <div class="groupWrapper">
             <div class="leftGroup">
@@ -38,7 +35,7 @@
               <div class="inputTagsWrapper">
                 <input id="tags" type="text" name="tags" value="<%= recipe.tags[0] %>" required />
                 <% for(let i = 1; i < recipe.tags.length; i++){ %>
-                  <input id="tags" type="text" name="tags" value="<%= recipe.tags[i] %>" />
+                  <input id="tags" type="text" name="tags" value="<%= recipe.tags[i] %>" required />
                 <% } %>
               </div>
             </div>
@@ -51,7 +48,7 @@
               <div class="inputIngredientsWrapper">
                 <input id="ingredients" type="text" name="ingredients" value="<%= recipe.ingredients[0] %>" required />
                 <% for(let i = 1; i < recipe.ingredients.length; i++){ %>
-                  <input id="ingredients" type="text" name="ingredients" value="<%= recipe.ingredients[i] %>" />
+                  <input id="ingredients" type="text" name="ingredients" value="<%= recipe.ingredients[i] %>" required />
                 <% } %>
               </div>
             </div>
@@ -66,7 +63,7 @@
           <div class="inputImagesWrapper">
             <input id="images" type="text" name="images" value="<%= recipe.images[0] %>" required />
             <% for(let i = 1; i < recipe.images.length; i++){ %>
-              <input id="images" type="text" name="images" value="<%= recipe.images[i] %>" />
+              <input id="images" type="text" name="images" value="<%= recipe.images[i] %>" required />
             <% } %>
           </div>
           <div class="flexGroup">
@@ -77,7 +74,7 @@
           <div class="inputDirectionsWrapper">
             <input id="directions" type="text" name="directions" value="<%= recipe.directions[0] %>" required />
             <% for(let i = 1; i < recipe.directions.length; i++){ %>
-              <input id="directions" type="text" name="directions" value="<%= recipe.directions[i] %>" />
+              <input id="directions" type="text" name="directions" value="<%= recipe.directions[i] %>" required />
             <% } %>
           </div>
           <input class="editButton button" type="submit" value="Submit Changes">

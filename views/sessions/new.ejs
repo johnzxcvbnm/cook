@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html lang="en" dir="ltr">
+  <head>
+    <% include ../partials/head.ejs %>
+  </head>
+  <body>
+    <div class="container">
+      <% include ../partials/nav.ejs %>
+      <div class="mainSection">
+        <h2>Welcome Back</h2>
+        <% if(err){ %>
+          <h4 class="wrongCombo">Wrong Username and/or Password</h4>
+        <% } %>
+        <form action="/sessions" method="POST">
+          <div class="createUserWrapper">
+            <div class="subWrapper">
+              <label for="username">Username:</label>
+              <input id="username" type="text" name="username" required />
+            </div>
+            <div class="subWrapper">
+              <label for="password">Password:</label>
+              <input id="password" type="password" name="password" required />
+            </div>
+          </div>
+          <input class="editButton button" type="submit" value="Login User">
+        </form>
+      </div>
+      <% include ../partials/footer.ejs %>
+    </div>
+  </body>
+</html>

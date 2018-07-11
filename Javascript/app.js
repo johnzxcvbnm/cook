@@ -3,7 +3,8 @@ const enableMoreLessButtons = () => {
   $("#moreDirections").on("click", () => {
     const $newInput = $("<input>").attr("id", "directions")
                                   .attr("type", "text")
-                                  .attr("name", "directions");
+                                  .attr("name", "directions")
+                                  .attr("required", true);
     $newInput.appendTo($(".inputDirectionsWrapper"));
   });
 
@@ -16,7 +17,8 @@ const enableMoreLessButtons = () => {
   $("#moreImages").on("click", () => {
     const $newInput = $("<input>").attr("id", "images")
                                   .attr("type", "text")
-                                  .attr("name", "images");
+                                  .attr("name", "images")
+                                  .attr("required", true);
     $newInput.appendTo($(".inputImagesWrapper"));
   });
 
@@ -29,7 +31,8 @@ const enableMoreLessButtons = () => {
   $("#moreIng").on("click", () => {
     const $newInput = $("<input>").attr("id", "ingredients")
                                   .attr("type", "text")
-                                  .attr("name", "ingredients");
+                                  .attr("name", "ingredients")
+                                  .attr("required", true);
     $newInput.appendTo($(".inputIngredientsWrapper"));
   });
 
@@ -42,6 +45,7 @@ const enableMoreLessButtons = () => {
   $("#moreTags").on("click", () => {
     const $newInput = $("<input>").attr("id", "tags")
                                   .attr("type", "text")
+                                  .attr("required", true)
                                   .attr("name", "tags");
     $newInput.appendTo($(".inputTagsWrapper"));
   });

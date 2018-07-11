@@ -11,6 +11,11 @@ const methodOverride = require("method-override");
 const bcrypt = require("bcrypt");
 
 //-----------------Sessions----------------------//
+app.use(session({
+  secret: "feedmeseymour",
+  resave: false,
+  saveUninitialized: false
+}));
 
 //-----------------Middleware--------------------//
 app.use( express.urlencoded( {extended: false} ) );
@@ -21,6 +26,12 @@ app.use( express.static( "Javascript" ) );
 //-----------------Controllers------------------//
 const recipeControllers = require("./controllers/recipes.js");
 app.use("/recipe", recipeControllers);
+
+const usersController = require("./controllers/users.js");
+app.use("/users", usersController);
+
+const sessionsController = require("./controllers/sessions.js");
+app.use("/sessions", sessionsController);
 
 //-------------------Index---------------------//
 app.get("/", (req, res) => {

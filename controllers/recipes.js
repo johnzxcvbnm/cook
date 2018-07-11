@@ -113,9 +113,10 @@ router.put("/:id", (req, res) => {
 
 //--------------GET Routes----------------//
 router.get("/index", (req, res) => {
-  Recipe.find( {}, (err, myRecipes) => {
+  Recipe.find( {} ).sort( {name: 1} ).exec( (err, myRecipes) => {
     res.render("index.ejs", {
-      recipes: myRecipes
+      recipes: myRecipes,
+      currentUser: req.session.currentUser
     });
   });
 });
@@ -130,7 +131,9 @@ router.get("/testSeed", (req, res) => {
 });
 
 router.get("/new", (req, res) => {
-  res.render("recipes/new.ejs");
+  res.render("recipes/new.ejs", {
+    currentUser: req.session.currentUser
+  });
 });
 
 router.get("/deleteall", (req, res) => {
@@ -140,7 +143,9 @@ router.get("/deleteall", (req, res) => {
 });
 
 router.get("/search", (req, res) => {
-  res.render("recipes/search.ejs");
+  res.render("recipes/search.ejs", {
+    currentUser: req.session.currentUser
+  });
 });
 
 router.get("/search/random", (req, res) => {
@@ -153,7 +158,8 @@ router.get("/search/random", (req, res) => {
 router.get("/:id/edit", (req, res) => {
   Recipe.findById(req.params.id, (err, myRecipe) => {
     res.render("recipes/edit.ejs", {
-      recipe: myRecipe
+      recipe: myRecipe,
+      currentUser: req.session.currentUser
     });
   });
 });
@@ -161,7 +167,8 @@ router.get("/:id/edit", (req, res) => {
 router.get("/:id", (req, res) => {
   Recipe.findById(req.params.id, (err, myRecipe) => {
     res.render("recipes/show.ejs", {
-      recipe: myRecipe
+      recipe: myRecipe,
+      currentUser: req.session.currentUser
     });
   });
 });
