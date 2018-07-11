@@ -3,6 +3,7 @@ const express = require("express");
 const router = express.Router();
 const Recipe = require("../models/recipes.js");
 const testSeed = require("../models/testSeed.js");
+const basicDataSeed = require("../models/basicDataSeed.js");
 
 //--------------DELETE Routes----------------//
 router.delete("/:id", (req, res) => {
@@ -11,6 +12,27 @@ router.delete("/:id", (req, res) => {
   });
 });
 
+router.get("/deleteall", (req, res) => {
+  Recipe.remove({}, (err) => {
+    res.redirect("/");
+  });
+});
+
+//--------------SEED Routes----------------//
+router.get("/testSeed", (req, res) => {
+  // res.send("Adding Seed Data");
+
+  Recipe.create(testSeed, (err, data) => {
+    res.send(data);
+    // res.redirect("/");
+  });
+});
+
+router.get("/basicdataseed", (req, res) => {
+  Recipe.create(basicDataSeed, (err, data) => {
+    res.send(data);
+  });
+});
 
 //--------------POST Routes----------------//
 router.post("/", (req, res) => {
@@ -133,24 +155,9 @@ router.get("/index", (req, res) => {
   });
 });
 
-router.get("/testSeed", (req, res) => {
-  // res.send("Adding Seed Data");
-
-  Recipe.create(testSeed, (err, data) => {
-    res.send(data);
-    // res.redirect("/");
-  });
-});
-
 router.get("/new", (req, res) => {
   res.render("recipes/new.ejs", {
     currentUser: req.session.currentUser
-  });
-});
-
-router.get("/deleteall", (req, res) => {
-  Recipe.remove({}, (err) => {
-    res.redirect("/");
   });
 });
 
