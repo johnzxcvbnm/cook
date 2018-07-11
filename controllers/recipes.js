@@ -7,25 +7,33 @@ const testSeed = require("../models/testSeed.js");
 //--------------PUT Routes----------------//
 router.put("/:id", (req, res) => {
   // res.send(req.body);
-  for(let i = 0; i < req.body.tags.length; i++){
+  for(let i = req.body.tags.length - 1; i >= 0; i--){
+    req.body.tags[i] = req.body.tags[i].replace(/\s+/g, '');
+
     if(req.body.tags[i] === ""){
       req.body.tags.splice(i, 1);
     }
   }
 
-  for(let i = 0; i < req.body.images.length; i++){
+  for(let i = req.body.images.length - 1; i >= 0; i--){
+    req.body.images[i] = req.body.images[i].replace(/\s/g, '');
+
     if(req.body.images[i] === ""){
       req.body.images.splice(i, 1);
     }
   }
 
-  for(let i = 0; i < req.body.ingredients.length; i++){
+  for(let i = req.body.ingredients.length - 1; i >= 0; i--){
+    // req.body.ingredients[i] = req.body.ingredients[i].replace(/\s/g, '');
+
     if(req.body.ingredients[i] === ""){
       req.body.ingredients.splice(i, 1);
     }
   }
 
-  for(let i = 0; i < req.body.directions.length; i++){
+  for(let i = req.body.directions.length - 1; i >= 0; i--){
+    // req.body.directions[i] = req.body.directions[i].replace(/\s/g, '');
+
     if(req.body.directions[i] === ""){
       req.body.directions.splice(i, 1);
     }

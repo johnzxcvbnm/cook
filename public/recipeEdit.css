@@ -2,3 +2,67 @@
 label, input{
   display: block;
 }
+
+label, .pm {
+  margin-top: 15px;
+  margin-bottom: 5px;
+}
+
+input {
+  padding: 3px;
+  width: 95%;
+}
+
+.groupWrapper {
+  margin-top: 10px;
+  width: 100%;
+  display: flex;
+  justify-content: space-between;
+}
+
+.leftGroup, .middleGroup, .rightGroup {
+  width: 30%;
+}
+
+.flexGroup {
+  display: flex;
+}
+
+.flexGroup div {
+  margin-left: 10px;
+  color: var(--headerSquare);
+}
+
+.pm {
+  padding: 3px 20px;
+}
+
+.pm h5 {
+  margin: 0;
+  font-weight: 700;
+}
+
+.pm:hover {
+  color: var(--colorThree);
+  background: var(--headerSquare);
+  border: 1px solid var(--colorThree);
+  box-sizing: border-box;
+  cursor: pointer;
+}
+
+input[type="submit"] {
+  color: var(--headerSquare);
+  margin: 30px auto 0 auto;
+  padding: 10px 0;
+  width: 20%;
+  font-weight: 700;
+  font-size: 1.3em;
+}
+
+input[type="submit"]:hover {
+  color: var(--colorThree);
+  background: var(--headerSquare);
+  border: 1px solid var(--colorThree);
+  box-sizing: border-box;
+  cursor: pointer;
+}
