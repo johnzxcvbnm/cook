@@ -35,6 +35,31 @@ router.get("/basicdataseed", (req, res) => {
 });
 
 //--------------POST Routes----------------//
+router.post("/:id/addrating", (req, res) => {
+  Recipe.findByIdAndUpdate( req.params.id, { $push: { ratings: req.body.rating } }, {new: true}, (err, myRecipe) => {
+    let sum = 0;
+
+    for(let i = 0; i < myRecipe.ratings.length; i++){
+      sum += myRecipe.ratings[i];
+    }
+
+    sum = sum / myRecipe.ratings.length;
+    sum = Math.floor( sum * 10) / 10;
+
+    Recipe.findByIdAndUpdate( req.params.id, { avgRating: sum }, {new: true}, (err, newRecipe) => {
+      // res.send(newRecipe);
+      res.redirect(`/recipe/${req.params.id}`);
+    });
+  });
+});
+
+router.post("/:id/addcomment", (req, res) => {
+  // res.send(req.body);
+  Recipe.findByIdAndUpdate( req.params.id, { $push: { comments: req.body.comment } }, (err) => {
+    res.redirect(`/recipe/${req.params.id}`);
+  });
+});
+
 router.post("/", (req, res) => {
   for(let i = req.body.tags.length - 1; i >= 0; i--){
     req.body.tags[i] = req.body.tags[i].replace(/\s+/g, '');

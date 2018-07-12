@@ -10,6 +10,20 @@
         <h2><%= foundUser.username %>'s User Page</h2>
         <h3 class="userSaved button">Saved Recipes</h3>
         <div class="recipeSection">
+          <div class="recipeCard">
+            <div class="imageWrapper">
+              <a href="/recipe/new">
+                <img src="https://vignette.wikia.nocookie.net/etniczna/images/d/d0/Pytajnik.jpg/revision/latest/scale-to-width-down/350?cb=20160502160744&path-prefix=pl">
+              </a>
+            </div>
+            <div class="cardDesc">
+              <a href="/recipe/new" class="cardHeader">
+                <h4>Create Recipe</h4>
+              </a>
+              <p><a class="catHeader">Rating:</a> 5 for sure!</p>
+              <p><a class="catHeader">Description:</a>Something delicious submitted by you!</p>
+            </div>
+          </div>
           <% for(let i = 0; i < recipes.length; i++){ %>
             <div class="recipeCard">
               <div class="imageWrapper">

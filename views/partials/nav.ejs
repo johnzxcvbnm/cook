@@ -5,8 +5,9 @@
     <!-- </div> -->
   </div>
   <div class="navBar">
-      <h3><a href="#">About Us</a></h3>
-      <h3><a href="/recipe/search">What's for Dinner</a></h3>
+      <h3><a href="/aboutus">About Us</a></h3>
+      <!-- <h3><a href="/recipe/search">What's for Dinner</a></h3> -->
+      <h3><a href="/recipe/search/random">What's for Dinner</a></h3>
       <h3><a href="/recipe/index">Our Cookbook</a></h3>
       <% if(currentUser){ %>
         <h3><a href="/users/<%= currentUser._id %>"><%= currentUser.username%></a></h3>

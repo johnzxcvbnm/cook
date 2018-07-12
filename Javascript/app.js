@@ -1,3 +1,16 @@
+const enableToggleButtons = () => {
+  const $myCommentDiv = $(".addComment").hide();
+  const $myRatingDiv = $(".addRating").hide();
+
+  $("#rateButton").on("click", () => {
+    $myRatingDiv.toggle();
+  });
+
+  $("#commentButton").on("click", () => {
+    $myCommentDiv.toggle();
+  });
+}
+
 const enableMoreLessButtons = () => {
 
   $("#moreDirections").on("click", () => {
@@ -85,4 +98,5 @@ const enableRotateButtons = () => {
 $( () => {
   enableRotateButtons();
   enableMoreLessButtons();
+  enableToggleButtons();
 });

@@ -167,6 +167,19 @@
   color: var(--headerSquare);
 }
 
+.addComment, .addRating {
+  display: none;
+  width: 90%;
+  margin: 30px auto;
+  background: var(--colorFour);
+  padding: 10px 10px 10px 20px;
+  border-radius: 4px;
+}
+
+.addComment label, .addRating label {
+  color: var(--headerSquare);
+}
+
 @media(max-width: 800px){
   .recipeInfo {
     display: block;

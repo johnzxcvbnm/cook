@@ -36,6 +36,12 @@ app.use("/recipe", recipeControllers);
 
 
 //-------------------Index---------------------//
+app.get("/aboutus", (req, res) => {
+  res.render("about.ejs", {
+    currentUser: req.session.currentUser
+  });
+});
+
 app.get("/", (req, res) => {
   res.redirect("recipe/index");
 });
