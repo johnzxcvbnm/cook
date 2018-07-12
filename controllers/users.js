@@ -23,7 +23,7 @@ router.get("/:userId/save/:id", (req,res) => {
 });
 
 router.get("/:userId/delete/:id", (req, res) => {
-  User.findByIdAndUpdate( req.params.userId, { $pull: { cookbook: req.params.id } }, (err, updated) => {
+  User.findByIdAndUpdate( req.params.userId, { $pull: { cookbook: req.params.id } }, {new: true}, (err, updated) => {
     req.session.currentUser.cookbook = updated.cookbook;
     res.redirect(`/users/${req.params.userId}`);
   });
