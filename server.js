@@ -61,3 +61,7 @@ mongoose.connect(mongoUri, { useNewUrlParser: true });
 mongoose.connection.once("open", () => {
   console.log("Connected to mongoose!!!!!!!!!");
 });
+
+// Lines:
+// 1176 + 237 + 45 + 55 + 104 + 10 + 46 + 20 + 19 + 192 + 66 + 14 + 52 + 69 + 22 + 23 + 16 + 5 + 120 + 21 + 70 + 86 + 31 + 48 + 28 + 16 + 49 + 38 + 63
+// 1565

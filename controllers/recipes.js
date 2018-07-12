@@ -12,27 +12,26 @@ router.delete("/:id", (req, res) => {
   });
 });
 
-router.get("/deleteall", (req, res) => {
-  Recipe.remove({}, (err) => {
-    res.redirect("/");
-  });
-});
+// router.get("/deleteall", (req, res) => {
+//   Recipe.remove({}, (err) => {
+//     res.redirect("/");
+//   });
+// });
 
 //--------------SEED Routes----------------//
-router.get("/testSeed", (req, res) => {
-  // res.send("Adding Seed Data");
-
-  Recipe.create(testSeed, (err, data) => {
-    res.send(data);
-    // res.redirect("/");
-  });
-});
-
-router.get("/basicdataseed", (req, res) => {
-  Recipe.create(basicDataSeed, (err, data) => {
-    res.send(data);
-  });
-});
+// router.get("/testSeed", (req, res) => {
+//   // res.send("Adding Seed Data");
+//   Recipe.create(testSeed, (err, data) => {
+//     res.send(data);
+//     // res.redirect("/");
+//   });
+// });
+//
+// router.get("/basicdataseed", (req, res) => {
+//   Recipe.create(basicDataSeed, (err, data) => {
+//     res.send(data);
+//   });
+// });
 
 //--------------POST Routes----------------//
 router.post("/:id/addrating", (req, res) => {
