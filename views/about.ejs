@@ -8,7 +8,40 @@ author<!DOCTYPE html>
       <% include partials/nav.ejs %>
       <div class="mainSection">
         <h2>What is The Cooking Epidemic?</h2>
-        <p>It's an awesome place, that's what it is.</p>
+        <div class="aboutSection">
+          <p>The Cooking Epidemic is a project that I made while attending General Assembly.  The guildlines of the project were to create a fully functioning (and decent looking) full stack application.  For my project specifically, I decided to make a collection of recipes where logged in users would be able to interact with this collection and everything would update itself dynamically.</p>
+          </br>
+          <h4>About the Site</h4>
+          <p>Personally, I hate a website that forces you to register in order to do anything on it.  I made it so anonymous users can browse the website, but are unable to contribue to it.  Registered users can add, edit, delete, rate and comment on all recipes.  Registered users can also 'save' recipes, which creates a subset of recipes on their user page.  Any created recipe made by a registered user is also added to their page automatically.  I tried to keep everything self-explanatory but below is an explaination of everything if you need it.</p>
+          </br>
+          <h4>Links Explanation</h4>
+          <ul>
+            <li><a class="catHeader">'The Cooking Epidemic'</a> takes you to the recipe index where the entire collection is organized by name.
+            <li><a class="catHeader">'About Us'</a> takes you to this page.  Congradulations for getting here.</li>
+            <li><a class="catHeader">'Our Cookbook'</a> takes you to the recipe index as well.</li>
+            <li><a class="catHeader">'Whats for Dinner'</a> brings the user to a random recipe.  I made this to help end the arguement of "What do you want to eat?  I don't know, what do you want?  I don't care..."</li>
+            <li><a class="catHeader">'Register'</a> creates a new user.  New users are automatically logged in.</li>
+            <li><a class="catHeader">'Login'</a> lets already existing users login.</li>
+            <li><a class="catHeader">'User Name'</a> will only appear when the user is logged on.  Clicking on their username will take them to their own user page which contains their saved recipes.  There is also a link on there that allows them to create a new recipe to contribute to the collection.</li>
+            <li><a class="catHeader">'Log Out'</a> will only appear when the user is logged on.  Clicking this will end the current session and log the user out.</li>
+            <li><a class="catHeader">'Recipe Name'</a> clicking on a recipe name or image will take you to that individual recipe page with all the information about it.  Logged in users have an additional task bar that allows them to interact with the recipe.</li>
+            <li><a class="catHeader">'GitHub'</a> brings you to this projects main GitHub page.  On it is a detailed README with all the information about this project.</li>
+            <li><a class="catHeader">'LinkedIn'</a> takes you to my personal LinkedIn page.</li>
+            <li><a class="catHeader">'Other Projects'</a> is the link to my GitHub pages which links out to all of my hosted projects.</li>
+          </ul>
+          </br>
+          <h4>Task Bar Explanation</h4>
+          Clicking on a recipe will take you to that individual recipe page.  Logged in users will have a task bar that allows them to interact with the recipe.
+          <ul>
+            <li><a class="catHeader">'New'</a> clicking on this takes the user to the create recipe page where they can add to the collection.  Newly created recipes are also added to their user page automatically.</li>
+            <li><a class="catHeader">'Save'</a> adds this recipe to the users own page so they can save the recipes they want and have a quick reference to it.  This option is replaced with 'UnSave' if they have already saved it.</li>
+            <li><a class="catHeader">'UnSave'</a> removes this recipe from the user page.  This option only appears if the user has 'saved' a recipe.</li>
+            <li><a class="catHeader">'Rate'</a> clicking on this brings up a rating box that allows the user to rate the current recipe.  Ratings are 1 (low) to 5 (high) and no other inputs are allowed.  Once the rating is submitted the average rating, which is displayed on the individual recipe page is automatically updated.</li>
+            <li><a class="catHeader">'Comment'</a> clicking on this brings up a comment box that allows the user to add a comment to the individual recipe page.  The page is automatically reloaded to bring up the newly added comment.</li>
+            <li><a class="catHeader">'Edit'</a> brings the user to the edit page with the current recipe.  This page allows the user to edit most aspects of the recipe.</li>
+            <li><a class="catHeader">'Delete'</a> will only appear if the recipe has it's protection turned off.  Deleting a recipe permanently removes it from the main collection and all subsets that maybe on any user page.</li>
+          </ul>
+        </div>
       </div>
       <% include partials/footer.ejs %>
     </div>
