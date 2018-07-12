@@ -58,7 +58,12 @@
   background: var(--headerBack);
   border: 0;
   font-size: 1.2em;
-  padding-top: 10px;
-  margin-right: 10px;
+  padding-top: 9px;
+  margin: 0 10px 0 0;
   font-weight: 500;
+  /* margin-bottom: 0; */
+}
+
+.navBar form {
+  margin: 0;
 }

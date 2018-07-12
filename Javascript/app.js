@@ -3,10 +3,12 @@ const enableToggleButtons = () => {
   const $myRatingDiv = $(".addRating").hide();
 
   $("#rateButton").on("click", () => {
+    $myCommentDiv.hide();
     $myRatingDiv.toggle();
   });
 
   $("#commentButton").on("click", () => {
+    $myRatingDiv.hide();
     $myCommentDiv.toggle();
   });
 }
