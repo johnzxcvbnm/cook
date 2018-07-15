@@ -1,3 +1,26 @@
+const enableTags = () => {
+  const $myTags = $(".tag2");
+  // console.log($myTags);
+
+  // $myTags.on("click", () => {
+  //   $myTags.toggleClass("selected");
+  // })
+
+  for(let i = 0; i < $myTags.length; i++){
+    $($myTags[i]).on("click", () => {
+      $($myTags[i]).toggleClass("selected");
+      let myString = $(".selected").text().replace(/\s+/g, '-');
+      // console.log(myString);
+      $(".hidden").attr("value", myString);
+    })
+  }
+
+  // $(".tag2").on("click", function() {
+  //   this.toggleClass("selected");
+  // })
+  // .toggleClass("selected");
+}
+
 const enableToggleButtons = () => {
   const $myCommentDiv = $(".addComment").hide();
   const $myRatingDiv = $(".addRating").hide();
@@ -101,4 +124,5 @@ $( () => {
   enableRotateButtons();
   enableMoreLessButtons();
   enableToggleButtons();
+  enableTags();
 });

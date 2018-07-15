@@ -8,11 +8,20 @@ author<!DOCTYPE html>
       <% include ../partials/nav.ejs %>
       <div class="mainSection">
         <h2>What's For Dinner</h2>
+
+        <div class="tagWrapper">
+          <% for(let i = 0; i < tags.length; i++){ %>
+            <div class="tag2 button">
+              <%= tags[i] %>
+            </div>
+          <% } %>
+
         <div class="buttonList">
           <a href="/recipe/search/random" class="actionButton button"><h3>Random</h3></a>
-          <!-- <form action="" method="POST">
+          <form action="/recipe/search" method="POST">
+            <input class="hidden" name="search" value="" />
             <input class="deleteButton button" type="submit" value="Search" />
-          </form> -->
+          </form>
         </div>
       </div>
       <% include ../partials/footer.ejs %>

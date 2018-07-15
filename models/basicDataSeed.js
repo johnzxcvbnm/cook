@@ -1486,6 +1486,7 @@ const myData = [
 for(let i of myData){
   for(let x = 0; x < i.tags.length; x++){
     i.tags[x] = i.tags[x].toUpperCase();
+    i.tags[x] = i.tags[x].replace(/\s+/g, '');
   }
   i.avgRating = generateAverage(i.ratings);
 }

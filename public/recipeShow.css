@@ -83,7 +83,7 @@
   height: 25px;
   padding: 7px 7px 0 7px;
   margin: 5px;
-  color: var(--headerSquare)
+  color: var(--headerSquare);
 }
 
 .button {
